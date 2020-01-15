@@ -38,7 +38,7 @@ namespace CrystalReportDemo
                 repo.DataDefinition.FormulaFields["targetSortCenterName"].Text = "'呼和浩特义乌区'";//目的地分拣中心名称
                 repo.DataDefinition.FormulaFields["destinationCrossCode"].Text = "'15'";//目的道口号
                 repo.DataDefinition.FormulaFields["destinationTabletrolleyCode"].Text = "'T20'";//目的车笼号
-                repo.DataDefinition.FormulaFields["sjxx"].Text = "'天津市市辖区西青区大寺镇柳杨道天物化轻大厦B座505室 & Char(10) & 朱国强 13521225218 13521228888'";//客户信息【黑体 9 号】：包含收件方姓名、电话、地址
+                repo.DataDefinition.FormulaFields["sjxx"].Text = "'天津市市辖区西青区大寺镇柳杨道天物化轻大厦B座505室 &Char(10)& 朱国强 13521225218 13521228888'";//客户信息【黑体 9 号】：包含收件方姓名、电话、地址
                 repo.DataDefinition.FormulaFields["ysje"].Text = "'0.00'";
                 repo.DataDefinition.FormulaFields["ydh"].Text = "'VA39002434914'";//运单号
                 repo.DataDefinition.FormulaFields["khxx"].Text = "'朱国强 13521225218 13521228888'";//收件客户名称、电话
