@@ -156,6 +156,7 @@
             // 
             // queryTxt
             // 
+            this.queryTxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.queryTxt.Name = "queryTxt";
             this.queryTxt.Size = new System.Drawing.Size(100, 25);
             // 
@@ -185,49 +186,49 @@
             // btnZoomyk
             // 
             this.btnZoomyk.Name = "btnZoomyk";
-            this.btnZoomyk.Size = new System.Drawing.Size(180, 22);
+            this.btnZoomyk.Size = new System.Drawing.Size(108, 22);
             this.btnZoomyk.Text = "页宽";
             this.btnZoomyk.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoomzy
             // 
             this.btnZoomzy.Name = "btnZoomzy";
-            this.btnZoomzy.Size = new System.Drawing.Size(180, 22);
+            this.btnZoomzy.Size = new System.Drawing.Size(108, 22);
             this.btnZoomzy.Text = "整页";
             this.btnZoomzy.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoom200
             // 
             this.btnZoom200.Name = "btnZoom200";
-            this.btnZoom200.Size = new System.Drawing.Size(180, 22);
+            this.btnZoom200.Size = new System.Drawing.Size(108, 22);
             this.btnZoom200.Text = "200%";
             this.btnZoom200.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoom150
             // 
             this.btnZoom150.Name = "btnZoom150";
-            this.btnZoom150.Size = new System.Drawing.Size(180, 22);
+            this.btnZoom150.Size = new System.Drawing.Size(108, 22);
             this.btnZoom150.Text = "150%";
             this.btnZoom150.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoom100
             // 
             this.btnZoom100.Name = "btnZoom100";
-            this.btnZoom100.Size = new System.Drawing.Size(180, 22);
+            this.btnZoom100.Size = new System.Drawing.Size(108, 22);
             this.btnZoom100.Text = "100%";
             this.btnZoom100.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoom75
             // 
             this.btnZoom75.Name = "btnZoom75";
-            this.btnZoom75.Size = new System.Drawing.Size(180, 22);
+            this.btnZoom75.Size = new System.Drawing.Size(108, 22);
             this.btnZoom75.Text = "75%";
             this.btnZoom75.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoom50
             // 
             this.btnZoom50.Name = "btnZoom50";
-            this.btnZoom50.Size = new System.Drawing.Size(180, 22);
+            this.btnZoom50.Size = new System.Drawing.Size(108, 22);
             this.btnZoom50.Text = "50%";
             this.btnZoom50.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
@@ -304,6 +305,7 @@
             // 
             this.rptView.ActiveViewIndex = -1;
             this.rptView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rptView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rptView.Location = new System.Drawing.Point(0, 0);
             this.rptView.Name = "rptView";
             this.rptView.SelectionFormula = "";
