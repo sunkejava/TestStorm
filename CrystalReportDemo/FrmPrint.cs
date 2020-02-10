@@ -136,6 +136,7 @@ namespace CrystalReportDemo
         private void RefreshSub()
         {
             rptView.RefreshReport();
+            rptView.Refresh();
         }
 
         private void QuerySub()
@@ -179,9 +180,9 @@ namespace CrystalReportDemo
             {
                 goPageNum.Items.Add(i);
             }
-            lbnowPage.Text = "当前页码："+ nowPage;
-            lbcountPage.Text = "总页数："+ pageCount;
-            lbsfxs.Text = "缩放系数："+sfxs;
+            //lbnowPage.Text = "当前页码："+ nowPage;
+            //lbcountPage.Text = "总页数："+ pageCount;
+            //lbsfxs.Text = "缩放系数："+sfxs;
         }
 
         #endregion

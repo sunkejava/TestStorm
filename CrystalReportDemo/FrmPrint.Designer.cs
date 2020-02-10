@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrint));
+            this.rptView = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnFirst = new System.Windows.Forms.ToolStripButton();
             this.btnBack = new System.Windows.Forms.ToolStripButton();
@@ -52,14 +53,22 @@
             this.btnZoom50 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClose = new System.Windows.Forms.ToolStripButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lbnowPage = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lbcountPage = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lbsfxs = new System.Windows.Forms.ToolStripStatusLabel();
-            this.rptView = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.toolStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // rptView
+            // 
+            this.rptView.ActiveViewIndex = -1;
+            this.rptView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.rptView.DisplayGroupTree = false;
+            this.rptView.DisplayToolbar = false;
+            this.rptView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptView.Location = new System.Drawing.Point(0, 25);
+            this.rptView.Name = "rptView";
+            this.rptView.SelectionFormula = "";
+            this.rptView.Size = new System.Drawing.Size(927, 561);
+            this.rptView.TabIndex = 0;
+            this.rptView.ViewTimeSelectionFormula = "";
             // 
             // toolStrip1
             // 
@@ -185,49 +194,49 @@
             // btnZoomyk
             // 
             this.btnZoomyk.Name = "btnZoomyk";
-            this.btnZoomyk.Size = new System.Drawing.Size(180, 22);
+            this.btnZoomyk.Size = new System.Drawing.Size(108, 22);
             this.btnZoomyk.Text = "页宽";
             this.btnZoomyk.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoomzy
             // 
             this.btnZoomzy.Name = "btnZoomzy";
-            this.btnZoomzy.Size = new System.Drawing.Size(180, 22);
+            this.btnZoomzy.Size = new System.Drawing.Size(108, 22);
             this.btnZoomzy.Text = "整页";
             this.btnZoomzy.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoom200
             // 
             this.btnZoom200.Name = "btnZoom200";
-            this.btnZoom200.Size = new System.Drawing.Size(180, 22);
+            this.btnZoom200.Size = new System.Drawing.Size(108, 22);
             this.btnZoom200.Text = "200%";
             this.btnZoom200.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoom150
             // 
             this.btnZoom150.Name = "btnZoom150";
-            this.btnZoom150.Size = new System.Drawing.Size(180, 22);
+            this.btnZoom150.Size = new System.Drawing.Size(108, 22);
             this.btnZoom150.Text = "150%";
             this.btnZoom150.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoom100
             // 
             this.btnZoom100.Name = "btnZoom100";
-            this.btnZoom100.Size = new System.Drawing.Size(180, 22);
+            this.btnZoom100.Size = new System.Drawing.Size(108, 22);
             this.btnZoom100.Text = "100%";
             this.btnZoom100.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoom75
             // 
             this.btnZoom75.Name = "btnZoom75";
-            this.btnZoom75.Size = new System.Drawing.Size(180, 22);
+            this.btnZoom75.Size = new System.Drawing.Size(108, 22);
             this.btnZoom75.Text = "75%";
             this.btnZoom75.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
             // btnZoom50
             // 
             this.btnZoom50.Name = "btnZoom50";
-            this.btnZoom50.Size = new System.Drawing.Size(180, 22);
+            this.btnZoom50.Size = new System.Drawing.Size(108, 22);
             this.btnZoom50.Text = "50%";
             this.btnZoom50.Click += new System.EventHandler(this.btnZoomyk_Click);
             // 
@@ -255,75 +264,19 @@
             this.imageList1.Images.SetKeyName(9, "下页.ico");
             this.imageList1.Images.SetKeyName(10, "下张.ico");
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbnowPage,
-            this.lbcountPage,
-            this.lbsfxs});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 564);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(927, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lbnowPage
-            // 
-            this.lbnowPage.AutoSize = false;
-            this.lbnowPage.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.lbnowPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lbnowPage.Name = "lbnowPage";
-            this.lbnowPage.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.lbnowPage.Size = new System.Drawing.Size(250, 17);
-            this.lbnowPage.Text = "当前页码:";
-            this.lbnowPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbcountPage
-            // 
-            this.lbcountPage.AutoSize = false;
-            this.lbcountPage.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.lbcountPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lbcountPage.Name = "lbcountPage";
-            this.lbcountPage.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.lbcountPage.Size = new System.Drawing.Size(250, 17);
-            this.lbcountPage.Text = "总页数：";
-            this.lbcountPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbsfxs
-            // 
-            this.lbsfxs.AutoSize = false;
-            this.lbsfxs.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.lbsfxs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lbsfxs.Name = "lbsfxs";
-            this.lbsfxs.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.lbsfxs.Size = new System.Drawing.Size(250, 17);
-            this.lbsfxs.Text = "缩放系数：";
-            this.lbsfxs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // rptView
-            // 
-            this.rptView.ActiveViewIndex = -1;
-            this.rptView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rptView.Location = new System.Drawing.Point(0, 0);
-            this.rptView.Name = "rptView";
-            this.rptView.SelectionFormula = "";
-            this.rptView.TabIndex = 0;
-            this.rptView.ViewTimeSelectionFormula = "";
-            // 
             // FrmPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(927, 586);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.rptView);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmPrint";
             this.Text = "FrmPrint";
             this.Load += new System.EventHandler(this.FrmPrint_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,10 +305,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnZoom75;
         private System.Windows.Forms.ToolStripMenuItem btnZoom50;
         private System.Windows.Forms.ToolStripButton btnClose;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel lbnowPage;
-        private System.Windows.Forms.ToolStripStatusLabel lbcountPage;
-        private System.Windows.Forms.ToolStripStatusLabel lbsfxs;
         public CrystalDecisions.Windows.Forms.CrystalReportViewer rptView;
     }
 }

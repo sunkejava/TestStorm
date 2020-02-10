@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystalReportDemo", "CrystalReportDemo\CrystalReportDemo.csproj", "{21FF242C-7B09-42B6-A9E6-FB3B95BF2B78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCvTest", "OpenCvTest\OpenCvTest.csproj", "{5E679C36-660C-4A70-929E-3BDF6FFD30BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,14 @@ Global
 		{21FF242C-7B09-42B6-A9E6-FB3B95BF2B78}.Release|Any CPU.Build.0 = Release|Any CPU
 		{21FF242C-7B09-42B6-A9E6-FB3B95BF2B78}.Release|x86.ActiveCfg = Release|x86
 		{21FF242C-7B09-42B6-A9E6-FB3B95BF2B78}.Release|x86.Build.0 = Release|x86
+		{5E679C36-660C-4A70-929E-3BDF6FFD30BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E679C36-660C-4A70-929E-3BDF6FFD30BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E679C36-660C-4A70-929E-3BDF6FFD30BA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E679C36-660C-4A70-929E-3BDF6FFD30BA}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E679C36-660C-4A70-929E-3BDF6FFD30BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E679C36-660C-4A70-929E-3BDF6FFD30BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E679C36-660C-4A70-929E-3BDF6FFD30BA}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E679C36-660C-4A70-929E-3BDF6FFD30BA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

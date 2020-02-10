@@ -56,7 +56,9 @@ namespace CrystalReportDemo
                 //repo.PrintToPrinter(1, false, 0, 0);//打印
                 //预览
                 FrmPrint frmPrint = new FrmPrint();
+                frmPrint.rptView.RectangleToScreen(new Rectangle(new Point(0,0),frmPrint.Size));
                 frmPrint.rptView.ReportSource = repo;
+                frmPrint.rptView.ParameterFieldInfo = repo.ParameterFields;
                 frmPrint.ShowDialog(this);
             }
         }
