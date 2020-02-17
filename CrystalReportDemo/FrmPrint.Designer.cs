@@ -253,6 +253,9 @@
             // rptView
             // 
             this.rptView.ActiveViewIndex = -1;
+            this.rptView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rptView.DisplayGroupTree = false;
+            this.rptView.DisplayToolbar = false;
             this.rptView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rptView.Location = new System.Drawing.Point(0, 0);
             this.rptView.Name = "rptView";
