@@ -14,6 +14,10 @@ namespace CrystalReportDemo
         private int pageCount;
         private int nowPage;
         private string sfxs;
+        public object rpst
+        {
+            get;set;
+        }
         public FrmPrint()
         {
             InitializeComponent();
@@ -21,6 +25,7 @@ namespace CrystalReportDemo
 
         private void FrmPrint_Load(object sender, EventArgs e)
         {
+            rptView.ReportSource = rpst;
             rptView.ShowLastPage();
             pageCount = rptView.GetCurrentPageNumber();
             nowPage = 1;
@@ -179,9 +184,9 @@ namespace CrystalReportDemo
             {
                 goPageNum.Items.Add(i);
             }
-            lbnowPage.Text = "当前页码："+ nowPage;
-            lbcountPage.Text = "总页数："+ pageCount;
-            lbsfxs.Text = "缩放系数："+sfxs;
+            //lbnowPage.Text = "当前页码："+ nowPage;
+            //lbcountPage.Text = "总页数："+ pageCount;
+            //lbsfxs.Text = "缩放系数："+sfxs;
         }
 
         #endregion
