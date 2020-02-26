@@ -24,43 +24,76 @@ namespace CrystalReportDemo
             CrystalReportPrint();
         }
 
-        private void CrystalReportPrint()
+        private void getRepoData(ref CrystalDecisions.CrystalReports.Engine.ReportClass repo,int l)
         {
-            CrystalDecisions.CrystalReports.Engine.ReportClass repo = (CrystalDecisions.CrystalReports.Engine.ReportClass)Assembly.Load("CrystalReportDemo").CreateInstance("CrystalReportDemo.rpt.CrystalReport1");
             if (repo != null)
             {
-                repo.PrintOptions.PaperSize = (CrystalDecisions.Shared.PaperSize)GetPagerSizeId("京东快递");//设置打印纸张
-                repo.DataDefinition.FormulaFields["bgydh"].Text = "'VA39002434914-1-1-'";//包裹运单号(运单号 -包裹序号 -包裹总数 -)
-                repo.DataDefinition.FormulaFields["bgzl"].Text = "'125.389'";//包裹重量
-                repo.DataDefinition.FormulaFields["sourcetSortCenterName"].Text = "'北京海淀区'";//始发分拣中心名称
-                repo.DataDefinition.FormulaFields["originalCrossCode"].Text = "'15'";//始发道口号
-                repo.DataDefinition.FormulaFields["originalTabletrolleyCode"].Text = "'T20'";//始发车笼号
-                repo.DataDefinition.FormulaFields["targetSortCenterName"].Text = "'呼和浩特义乌区'";//目的地分拣中心名称
-                repo.DataDefinition.FormulaFields["destinationCrossCode"].Text = "'15'";//目的道口号
-                repo.DataDefinition.FormulaFields["destinationTabletrolleyCode"].Text = "'T20'";//目的车笼号
-                repo.DataDefinition.FormulaFields["sjxx"].Text = "'天津市市辖区西青区大寺镇柳杨道天物化轻大厦B座505室 &Char(10)& 朱国强 13521225218 13521228888'";//客户信息【黑体 9 号】：包含收件方姓名、电话、地址
+                //repo.PrintOptions.PaperSize = (CrystalDecisions.Shared.PaperSize)GetPagerSizeId("京东");//设置打印纸张
+                string delivery_id = "JDVA01661244585";
+                string packagecount = l.ToString();
+                string weight = "5";
+                string source_sort_center_name = "北京通州分拣中心";
+                string source_cross_code = "10";
+                string source_tabletrolley_code = "160-呼市";
+                string target_sort_center_name = "呼和浩特分拨中心";
+                string target_tabletrolley_code = "A10-9";
+                string receive_address = "内蒙古呼和浩特市土默特左旗经济技术开发区金川区宽城小区";
+                string receive_name = "朱银岭";
+                string receive_mobile = "15335557302";
+                string sender_address = "内蒙古呼和浩特市和林格尔县企业总部南300米云谷水岸小区东侧";
+                string sender_name = "小致";
+                string sender_mobile = "18301192819";
+                string order_id = "B20200117155332304748390";
+                string road = "8";
+                string site_name = "*呼市金川宽城营业部";
+                repo.DataDefinition.FormulaFields["bgydh"].Text = "'" + delivery_id + "-"+l.ToString()+"-" + packagecount + "-'";//包裹运单号(运单号 -包裹序号 -包裹总数 -)
+                repo.DataDefinition.FormulaFields["bgzl"].Text = "'" + weight + "'";//包裹重量
+                repo.DataDefinition.FormulaFields["sourcetSortCenterName"].Text = "'" + source_sort_center_name + "'";//始发分拣中心名称
+                repo.DataDefinition.FormulaFields["originalCrossCode"].Text = "'" + source_cross_code + "'";//始发道口号
+                repo.DataDefinition.FormulaFields["originalTabletrolleyCode"].Text = "'" + source_tabletrolley_code + "'";//始发车笼号
+                repo.DataDefinition.FormulaFields["targetSortCenterName"].Text = "'" + target_sort_center_name + "'";//目的地分拣中心名称
+                repo.DataDefinition.FormulaFields["destinationCrossCode"].Text = "'" + target_tabletrolley_code + "'";//目的道口号
+                repo.DataDefinition.FormulaFields["destinationTabletrolleyCode"].Text = "'" + target_tabletrolley_code + "'";//目的车笼号
+                repo.DataDefinition.FormulaFields["sjxx"].Text = "'" + receive_address + " " + receive_name + " " + receive_mobile + "'";//客户信息【黑体 9 号】：包含收件方姓名、电话、地址
                 repo.DataDefinition.FormulaFields["ysje"].Text = "'0.00'";
-                repo.DataDefinition.FormulaFields["ydh"].Text = "'VA39002434914'";//运单号
-                repo.DataDefinition.FormulaFields["khxx"].Text = "'朱国强 13521225218 13521228888'";//收件客户名称、电话
-                repo.DataDefinition.FormulaFields["remark"].Text = "'青岛啤酒（Tsingtao）黑啤 /n 500ml * 12听 / 箱 整箱装 包'";//备注
-                repo.DataDefinition.FormulaFields["jfkhxx"].Text = "'天津市市辖区西青区大寺镇柳杨道天物化轻大厦B座505室 /n 朱国强 13521225218 13521228888'";//寄方客户信息
+                repo.DataDefinition.FormulaFields["ydh"].Text = "'" + delivery_id + "'";//运单号
+                repo.DataDefinition.FormulaFields["khxx"].Text = "'" + receive_name + " " + receive_mobile + "'";//收件客户名称、电话
+                repo.DataDefinition.FormulaFields["remark"].Text = "''";//备注 青岛啤酒（Tsingtao）黑啤 /n 500ml * 12听 / 箱 整箱装 包
+                repo.DataDefinition.FormulaFields["jfkhxx"].Text = "'" + sender_address + " " + sender_name + " " + sender_mobile + "'";//寄方客户信息
                 repo.DataDefinition.FormulaFields["sjid"].Text = "'202001151924001'";//商家ID
-                repo.DataDefinition.FormulaFields["bsjddh"].Text = "'N201912345678974524'";//商家订单号
-                repo.DataDefinition.FormulaFields["startCity"].Text = "'通州区'";//始发城市
-                repo.DataDefinition.FormulaFields["siteName"].Text = "'天津龙居花园站'";//站点名称
-                repo.DataDefinition.FormulaFields["rode"].Text = "'2'";//路区
-                repo.DataDefinition.FormulaFields["bgxl"].Text = "'1/1'";//包裹序列
-                repo.DataDefinition.FormulaFields["siteName"].Text = "'天津龙居花园站'";//站点名称
-
-                //repo.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;//纵向打印
-                //repo.PrintToPrinter(1, false, 0, 0);//打印
-                //预览
-                FrmPrint frmPrint = new FrmPrint();
-                frmPrint.rptView.RectangleToScreen(new Rectangle(new Point(0,0),frmPrint.Size));
-                frmPrint.rptView.ReportSource = repo;
-                frmPrint.rptView.ParameterFieldInfo = repo.ParameterFields;
-                frmPrint.ShowDialog(this);
+                repo.DataDefinition.FormulaFields["bsjddh"].Text = "'" + order_id + "'";//商家订单号
+                repo.DataDefinition.FormulaFields["startCity"].Text = "'" + source_sort_center_name + "'";//始发城市
+                repo.DataDefinition.FormulaFields["rode"].Text = "'" + road + "'";//路区
+                repo.DataDefinition.FormulaFields["bgxl"].Text = "'"+l.ToString()+"/" + packagecount + "'";//包裹序列
+                repo.DataDefinition.FormulaFields["siteName"].Text = "'" + site_name + "'";//站点名称
+                repo.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;//纵向打印
             }
+
+        }
+
+        private void CrystalReportPrint()
+        {
+            try
+            {
+                CrystalDecisions.CrystalReports.Engine.ReportClass repo = (CrystalDecisions.CrystalReports.Engine.ReportClass)Assembly.Load("CrystalReportDemo").CreateInstance("CrystalReportDemo.rpt.CrystalReport1");
+                if (repo != null)
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        getRepoData(ref repo,i);
+                        //repo.PrintToPrinter(1, false, 0, 0);//打印
+                        //预览
+                        FrmPrint frmPrint = new FrmPrint();
+                        frmPrint.rpst = repo;
+                        frmPrint.ShowDialog(this);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         private int GetPagerSizeId(string PagerName)
@@ -70,7 +103,7 @@ namespace CrystalReportDemo
             for (int i = 0; i <= doc.PrinterSettings.PaperSizes.Count - 1; i++)
             {
                 Console.WriteLine("纸张名称:{0}",doc.PrinterSettings.PaperSizes[i].PaperName);
-                if (doc.PrinterSettings.PaperSizes[i].PaperName.Equals(PagerName))
+                if (doc.PrinterSettings.PaperSizes[i].PaperName.Contains(PagerName))
                 {
                     rawKind = doc.PrinterSettings.PaperSizes[i].RawKind;
                     continue;

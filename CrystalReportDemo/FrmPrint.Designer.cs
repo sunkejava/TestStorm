@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrint));
-            this.rptView = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnFirst = new System.Windows.Forms.ToolStripButton();
             this.btnBack = new System.Windows.Forms.ToolStripButton();
@@ -53,22 +52,9 @@
             this.btnZoom50 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClose = new System.Windows.Forms.ToolStripButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.rptView = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // rptView
-            // 
-            this.rptView.ActiveViewIndex = -1;
-            this.rptView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.rptView.DisplayGroupTree = false;
-            this.rptView.DisplayToolbar = false;
-            this.rptView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rptView.Location = new System.Drawing.Point(0, 25);
-            this.rptView.Name = "rptView";
-            this.rptView.SelectionFormula = "";
-            this.rptView.Size = new System.Drawing.Size(927, 561);
-            this.rptView.TabIndex = 0;
-            this.rptView.ViewTimeSelectionFormula = "";
             // 
             // toolStrip1
             // 
@@ -264,14 +250,27 @@
             this.imageList1.Images.SetKeyName(9, "下页.ico");
             this.imageList1.Images.SetKeyName(10, "下张.ico");
             // 
+            // rptView
+            // 
+            this.rptView.ActiveViewIndex = -1;
+            this.rptView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rptView.DisplayGroupTree = false;
+            this.rptView.DisplayToolbar = false;
+            this.rptView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptView.Location = new System.Drawing.Point(0, 0);
+            this.rptView.Name = "rptView";
+            this.rptView.SelectionFormula = "";
+            this.rptView.Size = new System.Drawing.Size(927, 586);
+            this.rptView.TabIndex = 0;
+            this.rptView.ViewTimeSelectionFormula = "";
+            // 
             // FrmPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(927, 586);
-            this.Controls.Add(this.rptView);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.rptView);
             this.Name = "FrmPrint";
             this.Text = "FrmPrint";
             this.Load += new System.EventHandler(this.FrmPrint_Load);
@@ -305,6 +304,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnZoom75;
         private System.Windows.Forms.ToolStripMenuItem btnZoom50;
         private System.Windows.Forms.ToolStripButton btnClose;
-        public CrystalDecisions.Windows.Forms.CrystalReportViewer rptView;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer rptView;
     }
 }

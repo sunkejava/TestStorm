@@ -14,6 +14,10 @@ namespace CrystalReportDemo
         private int pageCount;
         private int nowPage;
         private string sfxs;
+        public object rpst
+        {
+            get;set;
+        }
         public FrmPrint()
         {
             InitializeComponent();
@@ -21,6 +25,7 @@ namespace CrystalReportDemo
 
         private void FrmPrint_Load(object sender, EventArgs e)
         {
+            rptView.ReportSource = rpst;
             rptView.ShowLastPage();
             pageCount = rptView.GetCurrentPageNumber();
             nowPage = 1;
